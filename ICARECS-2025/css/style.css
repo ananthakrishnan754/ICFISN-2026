@@ -583,3 +583,27 @@ a.btn-primary.large-btn {
     padding: 1.2rem 2.5rem;
     border-radius: 40px;
 }
+/* Center the submit button and add uniform spacing */
+.hero .btn {
+    display: inline-block;
+    margin: 2rem auto 2.5rem auto; /* top and bottom spacing */
+    padding: 0.9rem 2.5rem;
+    font-size: 1.2rem;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50px;
+    background-color: #007BFF; /* Adjust color to your theme */
+    color: #fff;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+/* Make sure it's centered inside container */
+.hero .container {
+    text-align: center;
+}
+
+/* Button hover effect (optional but looks nice) */
+.hero .btn:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
