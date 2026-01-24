@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Paper Submission | ICARECS 2025</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* CSS Variables */
+        :root {
+            --primary-color: #3f51b5;
+            --accent-color: #d81b60;
+            --heading-color: #1a237e;
+            --text-color: #333;
+            --bg-light: #f4f7f6;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --border-radius: 8px;
+            --warning-color: #d32f2f;
+        }
+
+        /* Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Lato', sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Poppins', sans-serif;
+            color: var(--heading-color);
+            margin-bottom: 1rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+            margin-bottom: 2rem;
+        }
+
+        h1::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background: var(--accent-color);
+            border-radius: 2px;
+        }
+
+        h2 {
+            font-size: 2rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 60px;
+            height: 4px;
+            background: var(--accent-color);
+            border-radius: 2px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            border-radius: 50px;
+            text-align: center;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .btn-primary {
+            background-color: var(--accent-color);
+            color: white;
+            box-shadow: var(--shadow);
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background-color: #c2185b;
+            transform: translateY(-2px);
+        }
+
+        .section {
+            padding: 4rem 0;
+        }
+
+        .bg-light {
+            background-color: var(--bg-light);
+        }
+
+        /* Header Styles */
+        .header {
+            position: sticky;
+            top: 0;
+            background-color: white;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            z-index: 1000;
+        }
+
+        .header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 1.5rem;
+        }
+
+        .logo {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+        }
+
+        .nav-list {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-list li {
+            margin-left: 1.5rem;
+        }
+
+        .nav-list a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            position: relative;
+            transition: color 0.3s;
+        }
+
+        .nav-list a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--accent-color);
+            transition: width 0.3s;
+        }
+
+        .nav-list a:hover {
+            color: var(--primary-color);
+        }
+
+        .nav-list a:hover::after {
+            width: 100%;
+        }
+
+        .nav-list a.active {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        .nav-list a.active::after {
+            width: 100%;
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            justify-content: space-around;
+            width: 30px;
+            height: 24px;
+            cursor: pointer;
+        }
+
+        .hamburger span {
+            display: block;
+            height: 3px;
+            width: 100%;
+            background-color: var(--primary-color);
+            border-radius: 3px;
+            transition: all 0.3s;
+        }
+
+        /* Main Content Styles */
+        main {
+            flex: 1;
+        }
+
+        .content-section {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 2.5rem;
+            margin-bottom: 2.5rem;
+            box-shadow: var(--shadow);
+        }
+
+        /* Conference Proceeding */
+        .conference-proceeding {
+            background-color: #e3f2fd;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        /* Submission Platform */
+        .submission-platform {
+            background-color: #e3f2fd;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .submission-platform .btn {
+            margin-top: 1.5rem;
+            font-size: 1.1rem;
+            padding: 1rem 2.5rem;
+        }
+
+        /* Review Process */
+        .review-process {
+             background-color: #e3f2fd;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .review-list {
+            list-style: none;
+            padding-left: 1.5rem;
+        }
+
+        .review-list li {
+            margin-bottom: 1rem;
+            position: relative;
+            padding-left: 2rem;
+        }
+
+        .review-list li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #7cb342;
+            font-size: 1.5rem;
+            top: -0.2rem;
+        }
+
+        .review-list strong {
+            color: var(--heading-color);
+        }
+
+        /* Manuscript Style */
+        .manuscript-style {
+             background-color: #e3f2fd;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .resource-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+
+        .resource-link {
+            display: flex;
+            align-items: center;
+            padding: 1.2rem;
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            text-decoration: none;
+            color: var(--primary-color);
+            transition: all 0.3s;
+            width: calc(50% - 0.75rem);
+        }
+
+        .resource-link:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+            color: var(--accent-color);
+        }
+
+        .resource-icon {
+            font-size: 2rem;
+            margin-right: 1rem;
+            width: 50px;
+            text-align: center;
+        }
+
+        .resource-text {
+            flex: 1;
+        }
+
+        .resource-text h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.3rem;
+        }
+
+        .resource-text p {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .warning-note {
+            background: white;
+            padding: 1.2rem;
+            border-radius: var(--border-radius);
+            border: 2px solid var(--warning-color);
+            margin-top: 1.5rem;
+            font-weight: 600;
+        }
+
+        /* Footer Styles */
+        .footer {
+            background-color: var(--heading-color);
+            color: white;
+            padding-top: 3rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            color: white;
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+        }
+
+        .footer-section p {
+            margin-bottom: 1rem;
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section li {
+            margin-bottom: 0.8rem;
+        }
+
+        .footer-section a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding: 1.5rem 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 991px) {
+            .section {
+                padding: 3rem 0;
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .content-section {
+                padding: 2rem;
+            }
+        }
+
+        @media (max-width: 767px) {
+            .hamburger {
+                display: flex;
+            }
+            
+            .nav-list {
+                position: fixed;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                flex-direction: column;
+                background-color: white;
+                box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+                transform: translateY(-150%);
+                transition: transform 0.3s ease;
+                z-index: 999;
+            }
+            
+            .nav-list.active {
+                transform: translateY(0);
+            }
+            
+            .nav-list li {
+                margin: 0;
+                text-align: center;
+                padding: 1rem;
+                border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            }
+            
+            .nav-list a {
+                display: block;
+                font-size: 1.2rem;
+            }
+            
+            .resource-links {
+                flex-direction: column;
+            }
+            
+            .resource-link {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            h2 {
+                font-size: 1.5rem;
+            }
+            
+            .section {
+                padding: 2rem 0;
+            }
+            
+            .content-section {
+                padding: 1.5rem;
+            }
+            
+            .btn {
+                width: 100%;
+                padding: 0.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">ICARECS 2025</div>
+            <nav class="nav">
+                <ul class="nav-list" id="navList">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="committee.html" class="active">Committee</a></li>
+                    <li><a href="keynote-speakers.html">Speakers</a></li>
+                    <li><a href="call-for-papers.html">Call for Papers</a></li>
+                    <li><a href="submission.html">Submission</a></li>
+                    <li><a href="registration.html">Registration</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="section">
+            <div class="container">
+                <h1>Paper Submission</h1>
+                
+                <div class="content-section conference-proceeding">
+                    <h2>Conference Proceeding</h2>
+                    <p>Conference proceedings will be published by <strong>Atlantis Press</strong>, which is now part of <strong>Springer Nature</strong>. This ensures wide dissemination and indexing of your research in major academic databases.</p>
+                </div>
+
+                <div class="content-section submission-platform">
+                    <h2>Submission Platform</h2>
+                    <p>Authors are invited to submit original and unpublished papers related to conference themes in the instructed format through the <strong>Microsoft CMT platform</strong>.</p>
+                    <div class="text-center">
+                        <a href="#" class="btn btn-primary">
+                            <i class="fas fa-upload"></i> Submit Your Full Manuscript
+                        </a>
+                    </div>
+                </div>
+
+                <div class="content-section review-process">
+                    <h2>Review Process</h2>
+                    <ul class="review-list">
+                        <li><strong>All submissions undergo peer review</strong> to ensure academic quality and relevance.</li>
+                        <li>Papers with insufficient research content, originality, or scientific validity may be <strong>rejected within 1–2 weeks</strong> without external review.</li>
+                        <li>Other manuscripts will be reviewed by <strong>two independent reviewers</strong> and an <strong>anonymous expert</strong> from the review committee (typically within 2–3 weeks).</li>
+                        <li>Final decisions are made by the <strong>Conference Chair</strong>, and acceptance or revision notices will be communicated via email to the corresponding author.</li>
+                    </ul>
+                </div>
+
+                <div class="content-section manuscript-style">
+                    <h2>Manuscript Style Information</h2>
+                    <p>Please follow the provided template and author guidelines. Submissions not adhering to these specifications may be rejected.</p>
+                    
+                    <div class="resource-links">
+                        <a href="https://assets.ctfassets.net/b4d0t67iwrjs/6JQ1lOOLTq8NFpsKLyPs0K/b59bee75880736845ffdca2ce00273c2/Proceedings_-_Author_guidelines__V8_20240304.pptx" target="_blank" class="resource-link">
+                            <div class="resource-icon">
+                                <i class="fas fa-file-powerpoint"></i>
+                            </div>
+                            <div class="resource-text">
+                                <h3>Author Guidelines</h3>
+                                <p>Detailed instructions for paper formatting</p>
+                            </div>
+                        </a>
+                        
+                        <a href="https://assets.ctfassets.net/b4d0t67iwrjs/61D4gQKQaJuqyRIB8i5h8h/0e1b497360ae6c6d0e04fdf5d776a9e2/Word_Template.zip" target="_blank" class="resource-link">
+                            <div class="resource-icon">
+                                <i class="fas fa-file-word"></i>
+                            </div>
+                            <div class="resource-text">
+                                <h3>Word Template</h3>
+                                <p>Downloadable template for manuscript preparation</p>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <div class="warning-note">
+                        <i class="fas fa-exclamation-triangle"></i> Violations of the formatting or submission specifications may result in <span style="color: var(--warning-color);">rejection</span> of your paper.
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About</h3>
+                    <p>ICARECS 2025 - International Conference on Advanced Research in Electronics and Communication Systems.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="keynote-speakers.html">Speakers</a></li>
+                        <li><a href="call-for-papers.html">Call for Papers</a></li>
+                        <li><a href="submission.html">Submission</a></li>
+                        <li><a href="registration.html">Registration</a></li>
+                        <li><a href="committee.html">Committee</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p>Sree Buddha College of Engineering<br>
+                    Pattoor P.O., Alappuzha District<br>
+                    Kerala, India - 690529<br>
+                    Email: icarecs2025@sbce.ac.in</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 ICARECS | Sree Buddha College of Engineering, Pattoor. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Navigation Toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburger = document.getElementById('hamburger');
+            const navList = document.getElementById('navList');
+            
+            if (hamburger && navList) {
+                hamburger.addEventListener('click', function() {
+                    navList.classList.toggle('active');
+                    hamburger.classList.toggle('active');
+                });
+            }
+            
+            // Close menu when clicking on a link
+            const navLinks = document.querySelectorAll('.nav-list a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    navList.classList.remove('active');
+                    if (hamburger) hamburger.classList.remove('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

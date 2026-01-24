@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration | ICFISN 2025</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        /* Additional CSS for registration page */
+        .registration-fees {
+            background-color: #e3f2fd;
+            border-left: 4px solid var(--primary-color);
+        }
+
+        .table-container {
+            overflow-x: auto;
+            margin: 1.5rem 0;
+        }
+
+        .registration-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            box-shadow: var(--shadow);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+        }
+
+        .registration-table th,
+        .registration-table td {
+            padding: 1.2rem;
+            text-align: center;
+            border: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        .registration-table th {
+            background-color: rgba(63, 81, 181, 0.1);
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+
+        .registration-table tr:nth-child(even) {
+            background-color: var(--bg-light);
+        }
+
+        .bank-details {
+            background-color: #e3f2fd;
+            border-left: 4px solid var(--primary-color);
+            padding: 1.5rem 2rem;
+            border-radius: var(--border-radius);
+            margin-bottom: 2rem;
+        }
+
+        .bank-details-grid {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            gap: 1rem;
+            align-items: center;
+        }
+        
+        .bank-details-grid div:nth-child(odd) {
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+
+        .publication-info {
+            background: #e8f5e9;
+            border-left: 4px solid var(--success-color);
+            padding: 1.5rem 2rem;
+            border-radius: var(--border-radius);
+            margin: 2rem 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .publication-info .icon {
+            font-size: 2rem;
+            color: var(--success-color);
+            margin-right: 1.5rem;
+        }
+
+        /* Mobile optimizations */
+        @media (max-width: 767px) {
+            .bank-details-grid {
+                grid-template-columns: 1fr;
+                gap: 0.5rem;
+            }
+            
+            .bank-details-grid div:nth-child(even) {
+                padding-left: 1rem;
+                margin-bottom: 0.5rem;
+            }
+            
+            .registration-table {
+                display: block;
+                width: 100%;
+            }
+            
+            .registration-table thead {
+                display: none;
+            }
+            
+            .registration-table tbody, 
+            .registration-table tr, 
+            .registration-table td {
+                display: block;
+                width: 100%;
+            }
+            
+            .registration-table tr {
+                margin-bottom: 1rem;
+                border-radius: var(--border-radius);
+                border: 1px solid #ddd;
+                overflow: hidden;
+            }
+            
+            .registration-table td {
+                text-align: center;
+                border: none;
+                position: relative;
+                padding-left: 50%;
+            }
+            
+            .registration-table td:before {
+                position: absolute;
+                left: 1rem;
+                width: 45%;
+                padding-right: 10px;
+                white-space: nowrap;
+                font-weight: bold;
+                text-align: left;
+            }
+            
+            .registration-table td:nth-of-type(1):before { content: "Category"; }
+            .registration-table td:nth-of-type(2):before { content: "Without Journal"; }
+            .registration-table td:nth-of-type(3):before { content: "With Journal"; }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">ICFISN 2025</div>
+            <nav class="nav">
+                <ul class="nav-list" id="navList">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="committee.html">Committee</a></li>
+                    <li><a href="keynote-speakers.html">Speakers</a></li>
+                    <li><a href="call-for-papers.html">Call for Papers</a></li>
+                    <li><a href="submission.html">Submission</a></li>
+                    <li><a href="registration.html" class="active">Registration</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="section">
+            <div class="container">
+                <h1>Registration</h1>
+                <p style="text-align: center; max-width: 800px; margin: 0 auto 2rem; font-size: 1.1rem;">
+                    Register now to secure your participation in ICFISN 2025. Early registration is recommended. 
+                    Join leading experts for this premier international conference.
+                </p>
+
+                <div class="content-section bank-details">
+                    <h2>How to Register & Payment Details</h2>
+                    <p>Candidates may register online using the link below. Payment of the registration fee can be done to the provided bank account through electronic money transfer.</p>
+                     <a href="https://icfisnsbce.in/" target="_blank" class="btn btn-primary btn-large" style="margin-top: 1rem; margin-bottom: 2rem;">
+                        <i class="fas fa-user-check"></i> Register Online Now
+                    </a>
+                    <h3>Bank Account Details</h3>
+                    <div class="bank-details-grid">
+                        <div>Bank Name:</div>
+                        <div><b>Canara Bank</b></div>
+                        <div>Branch:</div>
+                        <div><b>Pattoor</b></div>
+                        <div>Account Name:</div>
+                        <div><b>E2F2</b></div>
+                        <div>Account Number:</div>
+                        <div><b>41142200018570</b></div>
+                        <div>IFSC Code:</div>
+                        <div><b>CNRB0014114</b></div>
+                    </div>
+                </div>
+
+                <div class="publication-info">
+                    <div class="icon"><i class="fas fa-book-open"></i></div>
+                    <p>Proceedings of ICFISN 2025 will be published in a book chapter with an ISBN Number.</p>
+                </div>
+                
+                <div class="content-section registration-fees">
+                    <h2>Registration Fees</h2>
+                    <div class="table-container">
+                        <table class="registration-table">
+                            <thead>
+                                <tr>
+                                    <th>Category</th>
+                                    <th>Without Journal Publication</th>
+                                    <th>With Journal Publication</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Industry Experts</td>
+                                    <td>₹1,500</td>
+                                    <td>₹10,000</td>
+                                </tr>
+                                <tr>
+                                    <td>Research Scholars/Academicians</td>
+                                    <td>₹1,000</td>
+                                    <td>₹8,500</td>
+                                </tr>
+                                <tr>
+                                    <td>Students</td>
+                                    <td>₹750</td>
+                                    <td>₹7,500</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>About</h3>
+                    <p>ICFISN 2025 - International Conference on Fostering Innovation in intelligent System and Next-gen Networks.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="committee.html">Committee</a></li>
+                        <li><a href="keynote-speakers.html">Speakers</a></li>
+                        <li><a href="call-for-papers.html">Call for Papers</a></li>
+                        <li><a href="submission.html">Submission</a></li>
+                        <li><a href="registration.html">Registration</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact</h3>
+                    <p>Sree Buddha College of Engineering<br>
+                    Pattoor P.O., Alappuzha District<br>
+                    Kerala, India - 690529<br>
+                    Email: icfisn2025@sbce.ac.in</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 ICFISN | Sree Buddha College of Engineering, Pattoor. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
