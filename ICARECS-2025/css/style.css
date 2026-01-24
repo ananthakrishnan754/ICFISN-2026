@@ -23,7 +23,12 @@ body {
     background-color: #ffffff;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
     font-family: 'Poppins', sans-serif;
     color: var(--heading-color);
     margin-bottom: 1rem;
@@ -302,7 +307,8 @@ table {
     overflow: hidden;
 }
 
-th, td {
+th,
+td {
     padding: 1rem;
     text-align: left;
     border-bottom: 1px solid #eee;
@@ -407,7 +413,7 @@ tr:nth-child(even) {
     .hero h1 {
         font-size: 3rem;
     }
-    
+
     .hero h2 {
         font-size: 1.5rem;
     }
@@ -422,7 +428,7 @@ tr:nth-child(even) {
     .hamburger {
         display: flex;
     }
-    
+
     .nav-list {
         position: fixed;
         top: 70px;
@@ -435,40 +441,40 @@ tr:nth-child(even) {
         transition: transform 0.3s ease;
         z-index: 999;
     }
-    
+
     .nav-list.active {
         transform: translateY(0);
     }
-    
+
     .nav-list li {
         margin: 0;
         text-align: center;
         padding: 1rem;
         border-bottom: 1px solid rgba(0, 0, 0, 0.05);
     }
-    
+
     .nav-list a {
         display: block;
         font-size: 1.2rem;
     }
-    
+
     .hero h1 {
         font-size: 2.5rem;
     }
-    
+
     .hero h2 {
         font-size: 1.3rem;
     }
-    
+
     .hero .btn {
         padding: 0.8rem 2rem;
         font-size: 1.1rem;
     }
-    
+
     .logo-bar {
         gap: 1rem;
     }
-    
+
     .logo-bar img {
         height: 40px;
     }
@@ -478,29 +484,34 @@ tr:nth-child(even) {
     }
 
     /* Responsive table */
-    table, thead, tbody, th, td, tr {
+    table,
+    thead,
+    tbody,
+    th,
+    td,
+    tr {
         display: block;
     }
-    
+
     thead tr {
         position: absolute;
         top: -9999px;
         left: -9999px;
     }
-    
+
     tr {
         border: 1px solid #ccc;
         margin-bottom: 1rem;
         border-radius: var(--border-radius);
     }
-    
+
     td {
         border: none;
         border-bottom: 1px solid #eee;
         position: relative;
         padding-left: 50%;
     }
-    
+
     td:before {
         position: absolute;
         top: 1rem;
@@ -510,33 +521,42 @@ tr:nth-child(even) {
         white-space: nowrap;
         font-weight: bold;
     }
-    
-    td:nth-of-type(1):before { content: "Category"; }
-    td:nth-of-type(2):before { content: "IEEE Member"; }
-    td:nth-of-type(3):before { content: "Non-IEEE"; }
+
+    td:nth-of-type(1):before {
+        content: "Category";
+    }
+
+    td:nth-of-type(2):before {
+        content: "IEEE Member";
+    }
+
+    td:nth-of-type(3):before {
+        content: "Non-IEEE";
+    }
 }
 
 @media (max-width: 480px) {
     .hero h1 {
         font-size: 2rem;
     }
-    
+
     .hero h2 {
         font-size: 1.1rem;
     }
-    
+
     .dates {
         font-size: 1.2rem;
     }
-    
+
     .section {
         padding: 3rem 0;
     }
-    
+
     h2 {
         font-size: 1.8rem;
     }
 }
+
 /* Submission section additions */
 a.btn-primary[target="_blank"] {
     display: inline-block;
@@ -578,21 +598,25 @@ ul.topic-list a:hover {
 .section p span[style*="color: red"] {
     font-weight: 600;
 }
+
 a.btn-primary.large-btn {
     font-size: 1.25rem;
     padding: 1.2rem 2.5rem;
     border-radius: 40px;
 }
+
 /* Center the submit button and add uniform spacing */
 .hero .btn {
     display: inline-block;
-    margin: 2rem auto 2.5rem auto; /* top and bottom spacing */
+    margin: 2rem auto 2.5rem auto;
+    /* top and bottom spacing */
     padding: 0.9rem 2.5rem;
     font-size: 1.2rem;
     text-align: center;
     text-decoration: none;
     border-radius: 50px;
-    background-color: #ff007b; /* Adjust color to your theme */
+    background-color: #ff007b;
+    /* Adjust color to your theme */
     color: #fff;
     transition: background 0.3s ease, transform 0.2s ease;
 }
